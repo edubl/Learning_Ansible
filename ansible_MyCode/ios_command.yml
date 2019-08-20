@@ -1,0 +1,15 @@
+---
+  - name: Run multiple IOS commands
+    connection: network_cli
+    hosts: "ios-devices"
+    tasks:
+      - name: run multiple commands
+        ios_command:
+          commands:
+            - show run
+            - show interfaces
+        register: output
+
+      - name: copy output to file
+        copy: content="{{ output }}" dest=./output/{{ inventory_hostname }}.txt
+...

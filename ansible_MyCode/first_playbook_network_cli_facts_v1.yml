@@ -1,0 +1,12 @@
+---
+  - name: First Network Playbook
+    connection: network_cli
+    gather_facts: flase
+    hosts: "ios-devices"
+    tasks:
+        - name: backup
+          ios_config:
+            backup: yes
+          register: backup_ios_location
+          when: ansible_network_os == 'ios'
+...

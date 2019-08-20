@@ -1,0 +1,14 @@
+---
+  - name: First Network Playbook
+    connection: network_cli
+    gather_facts: true
+    hosts: all
+    tasks:
+        - name: Gather IOS Facts
+          ios_facts:
+          when: ansible_network_os == 'ios'
+
+        - name: Dsiplay Facts
+          debug:
+            msg: "The hostname is {{ ansible_net_hostname }} and the os is {{ ansible_net_version}}"
+...
