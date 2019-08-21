@@ -1,6 +1,6 @@
 ansible_host: "ios-xe-mgmt-latest.cisco.com"
-ansible_user: 'root'
-ansible_ssh_pass: 'D_Vay!_10&'
+ansible_user: 'developer'
+ansible_ssh_pass: 'C1sco12345'
 ansible_port: 8181
 netconf_port: 10000
 ansible_connection: network_cli
